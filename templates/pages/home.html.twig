@@ -10,5 +10,21 @@
 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic</p>
 </div>
 <div class="container">
+<h2>Les derniers biens</h2>
+  <div class="row flex">
+    {% for property in properties %}
+      <div class="col-3">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">
+            <a href="#">{{ property.title }}</a>
+            </h5>
+            <p class="card-text">{{ property.city }} ({{ property.postal_code }})</p>
+            <div class="text-primary">{{ property.formattedPrice }}
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
 </div>
 {% endblock %}
